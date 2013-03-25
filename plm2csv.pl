@@ -6,15 +6,13 @@ use autodie;
 use Data::Dumper;
 use Text::CSV_XS;
 
+# Usage: perl plm2csv.pl input.csv > output.csv
+
 my $csv = Text::CSV_XS->new( {
     auto_diag => 1,
     binary => 0,
     eol => "\n",
-#    quote_char => q{"},
-#    sep_char => q{,},
-#    escape_char => undef,
-} )
-    or die Text::CSV_XS->error_diag;
+} ) or die Text::CSV_XS->error_diag;
 
 my $file = shift;
 
